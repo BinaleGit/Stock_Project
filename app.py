@@ -33,10 +33,6 @@ def fetch_all_stock_symbols():
 fetch_all_stock_symbols()
 print(ALL_STOCKS)
 
-
-
-
-
 @app.route('/api/stock/<symbol>', methods=['GET'])
 def get_stock_data(symbol):
     symbol = symbol.upper()
@@ -74,10 +70,6 @@ def get_suggestions(input):
         if input in stock['Symbol'] or input in stock['Security'].upper()
     ][:5]
     return jsonify(matching_suggestions)
-
-
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
